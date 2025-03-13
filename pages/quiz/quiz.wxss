@@ -1,0 +1,37 @@
+/**quiz.wxss**/
+.container {
+  padding: 40rpx;
+}
+.question {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+}
+.options {
+  margin-bottom: 40rpx;
+}
+.option {
+  padding: 20rpx;
+  border: 2rpx solid #dddddd;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+}
+.option.selected {
+  background-color: #e6f7ff;
+  border-color: #1890ff;
+}
+.next-btn {
+  background-color: #1aad19;
+  color: #ffffff;
+  padding: 20rpx 40rpx;
+  border-radius: 10rpx;
+}
+.next-btn[disabled] {
+  background-color: #cccccc;
+}
+.progress {
+  text-align: center;
+  margin-top: 40rpx;
+  font-size: 28rpx;
+  color: #888888;
+}

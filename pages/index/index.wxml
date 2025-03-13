@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="title">答题小程序</view>
+  <view class="intro">欢迎来到答题小程序，这里有各种有趣的单选和多选题等你来挑战！</view>
+  <button class="start-btn" bindtap="startQuiz">开始答题</button>
+</view>

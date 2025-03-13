@@ -1,0 +1,13 @@
+<!--result.wxml-->
+<view class="container">
+  <view class="title">答题结果</view>
+  <view class="score">你的得分：{{score}}/{{totalQuestions}}</view>
+  <view class="message">
+    {{score === totalQuestions ? '太棒了！你答对了所有题目！' : 
+      score >= totalQuestions * 0.6 ? '不错！继续加油哦！' : '还需要多加练习哦！'}}
+  </view>
+  <view class="btn-group">
+    <button class="btn" bindtap="restartQuiz">重新答题</button>
+    <button class="btn" bindtap="backToHome">返回首页</button>
+  </view>
+</view>

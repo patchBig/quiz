@@ -1,0 +1,15 @@
+<!--quiz.wxml-->
+<view class="container">
+  <view class="question">{{questions[currentQuestionIndex].question}}</view>
+  <view class="options">
+    <view wx:for="{{questions[currentQuestionIndex].options}}" wx:key="index" 
+          class="option {{selectedAnswer.includes(index) ? 'selected' : ''}}"
+          bindtap="selectOption" data-index="{{index}}">
+      {{item}}
+    </view>
+  </view>
+  <button class="next-btn" bindtap="nextQuestion" disabled="{{!showNext}}">
+    {{currentQuestionIndex === questions.length - 1 ? '完成' : '下一题'}}
+  </button>
+  <view class="progress">问题 {{currentQuestionIndex + 1}}/{{totalQuestions}}</view>
+</view>
