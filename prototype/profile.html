@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人中心 - 答题系统</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .ios-status-bar {
+            height: 44px;
+            background-color: #000;
+            color: white;
+            padding: 12px 16px;
+            font-size: 14px;
+        }
+        .bottom-tab-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 84px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid #E5E7EB;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 pb-20">
+    <!-- iOS 状态栏 -->
+    <div class="ios-status-bar flex justify-between items-center">
+        <div>9:41</div>
+        <div class="flex space-x-2">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+
+    <!-- 个人信息卡片 -->
+    <div class="bg-white p-6">
+        <div class="flex items-center">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" 
+                 alt="用户头像" 
+                 class="w-20 h-20 rounded-full object-cover border-4 border-white shadow">
+            <div class="ml-4">
+                <h2 class="text-xl font-bold">张三</h2>
+                <p class="text-gray-500">Level 5 答题达人</p>
+            </div>
+        </div>
+
+        <!-- 统计数据 -->
+        <div class="grid grid-cols-3 gap-4 mt-6">
+            <div class="text-center">
+                <div class="text-2xl font-bold text-blue-500">127</div>
+                <div class="text-sm text-gray-500">已答题目</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-bold text-green-500">85%</div>
+                <div class="text-sm text-gray-500">正确率</div>
+            </div>
+            <div class="text-center">
+                <div class="text-2xl font-bold text-purple-500">12</div>
+                <div class="text-sm text-gray-500">连续答题</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 功能列表 -->
+    <div class="mt-4 bg-white">
+        <div class="px-4 py-3 flex justify-between items-center border-b">
+            <div class="flex items-center">
+                <i class="fas fa-history text-gray-400 w-6"></i>
+                <span class="ml-3">答题历史</span>
+            </div>
+            <i class="fas fa-chevron-right text-gray-400"></i>
+        </div>
+        <div class="px-4 py-3 flex justify-between items-center border-b">
+            <div class="flex items-center">
+                <i class="fas fa-star text-gray-400 w-6"></i>
+                <span class="ml-3">我的收藏</span>
+            </div>
+            <i class="fas fa-chevron-right text-gray-400"></i>
+        </div>
+        <div class="px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-cog text-gray-400 w-6"></i>
+                <span class="ml-3">设置</span>
+            </div>
+            <i class="fas fa-chevron-right text-gray-400"></i>
+        </div>
+    </div>
+
+    <!-- 底部标签栏 -->
+    <div class="bottom-tab-bar flex justify-around items-center px-6">
+        <a href="#" class="flex flex-col items-center text-gray-400">
+            <i class="fas fa-home text-xl"></i>
+            <span class="text-xs mt-1">首页</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-gray-400">
+            <i class="fas fa-trophy text-xl"></i>
+            <span class="text-xs mt-1">排行</span>
+        </a>
+        <a href="#" class="flex flex-col items-center text-blue-500">
+            <i class="fas fa-user text-xl"></i>
+            <span class="text-xs mt-1">我的</span>
+        </a>
+    </div>
+</body>
+</html> 

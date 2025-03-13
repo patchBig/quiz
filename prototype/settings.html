@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置 - 答题系统</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .ios-status-bar {
+            height: 44px;
+            background-color: #000;
+            color: white;
+            padding: 12px 16px;
+            font-size: 14px;
+        }
+        .toggle-switch {
+            width: 51px;
+            height: 31px;
+            background-color: #E5E7EB;
+            border-radius: 16px;
+            position: relative;
+            transition: background-color 0.2s;
+        }
+        .toggle-switch.active {
+            background-color: #3B82F6;
+        }
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 27px;
+            height: 27px;
+            background-color: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .toggle-switch.active::after {
+            transform: translateX(20px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- iOS 状态栏 -->
+    <div class="ios-status-bar flex justify-between items-center">
+        <div>9:41</div>
+        <div class="flex space-x-2">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="bg-white px-4 py-4 flex items-center border-b">
+        <button class="text-gray-600" onclick="history.back()">
+            <i class="fas fa-chevron-left text-xl"></i>
+        </button>
+        <h1 class="text-xl font-bold ml-4">设置</h1>
+    </div>
+
+    <!-- 设置列表 -->
+    <div class="mt-4">
+        <!-- 账号设置 -->
+        <div class="bg-white mb-4">
+            <div class="px-4 py-3 border-b">
+                <div class="text-sm text-gray-500">账号设置</div>
+            </div>
+            <div class="px-4 py-3 flex justify-between items-center border-b">
+                <span>修改密码</span>
+                <i class="fas fa-chevron-right text-gray-400"></i>
+            </div>
+            <div class="px-4 py-3 flex justify-between items-center">
+                <span>手机号绑定</span>
+                <div class="flex items-center text-gray-400">
+                    <span class="mr-2">138****8888</span>
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 通知设置 -->
+        <div class="bg-white mb-4">
+            <div class="px-4 py-3 border-b">
+                <div class="text-sm text-gray-500">通知设置</div>
+            </div>
+            <div class="px-4 py-3 flex justify-between items-center border-b">
+                <span>每日提醒</span>
+                <div class="toggle-switch active"></div>
+            </div>
+            <div class="px-4 py-3 flex justify-between items-center">
+                <span>声音提示</span>
+                <div class="toggle-switch"></div>
+            </div>
+        </div>
+
+        <!-- 其他设置 -->
+        <div class="bg-white">
+            <div class="px-4 py-3 border-b">
+                <div class="text-sm text-gray-500">其他设置</div>
+            </div>
+            <div class="px-4 py-3 flex justify-between items-center border-b">
+                <span>清除缓存</span>
+                <span class="text-gray-400">12.5MB</span>
+            </div>
+            <div class="px-4 py-3 flex justify-between items-center border-b">
+                <span>关于我们</span>
+                <i class="fas fa-chevron-right text-gray-400"></i>
+            </div>
+            <div class="px-4 py-3 flex justify-between items-center">
+                <span>当前版本</span>
+                <span class="text-gray-400">v1.0.0</span>
+            </div>
+        </div>
+
+        <!-- 退出登录按钮 -->
+        <div class="p-4">
+            <button class="w-full bg-red-500 text-white py-3 rounded-lg font-medium">
+                退出登录
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // 切换开关状态
+        document.querySelectorAll('.toggle-switch').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                toggle.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html> 

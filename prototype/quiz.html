@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>答题 - 答题系统</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .ios-status-bar {
+            height: 44px;
+            background-color: #000;
+            color: white;
+            padding: 12px 16px;
+            font-size: 14px;
+        }
+        .progress-bar {
+            height: 4px;
+            background: #E5E7EB;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: #3B82F6;
+            width: 30%;
+            transition: width 0.3s ease;
+        }
+        .timer {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 6px 12px;
+            color: white;
+            position: fixed;
+            top: 60px;
+            right: 16px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 20;
+        }
+        .timer.warning {
+            background: rgba(220, 38, 38, 0.9);
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- iOS 状态栏 -->
+    <div class="ios-status-bar flex justify-between items-center">
+        <div>9:41</div>
+        <div class="flex space-x-2">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+
+    <!-- 计时器 -->
+    <div class="timer" id="timer">
+        <i class="far fa-clock mr-1"></i>
+        <span id="time-display">29:59</span>
+    </div>
+
+    <!-- 顶部导航 -->
+    <div class="bg-white px-4 py-4 flex justify-between items-center">
+        <button class="text-gray-600">
+            <i class="fas fa-times text-xl"></i>
+        </button>
+        <div class="text-center">
+            <div class="text-sm text-gray-500">JavaScript基础 6/20</div>
+            <div class="progress-bar w-32 mt-2">
+                <div class="progress-bar-fill"></div>
+            </div>
+        </div>
+        <div class="w-8"></div>
+    </div>
+
+    <!-- 题目内容 -->
+    <div class="p-4 space-y-6">
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+            <span class="text-sm text-gray-500">单选题</span>
+            <h2 class="text-lg font-medium mt-2">
+                在JavaScript中，以下哪个选项不是基本数据类型？
+            </h2>
+        </div>
+
+        <!-- 选项列表 -->
+        <div class="space-y-3">
+            <button class="w-full bg-white p-4 rounded-xl text-left border-2 border-transparent hover:border-blue-500 transition-colors">
+                <div class="flex items-center">
+                    <span class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mr-3">A</span>
+                    <span>String</span>
+                </div>
+            </button>
+
+            <button class="w-full bg-white p-4 rounded-xl text-left border-2 border-transparent hover:border-blue-500 transition-colors">
+                <div class="flex items-center">
+                    <span class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mr-3">B</span>
+                    <span>Number</span>
+                </div>
+            </button>
+
+            <button class="w-full bg-white p-4 rounded-xl text-left border-2 border-blue-500 transition-colors">
+                <div class="flex items-center">
+                    <span class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center mr-3">C</span>
+                    <span>Array</span>
+                </div>
+            </button>
+
+            <button class="w-full bg-white p-4 rounded-xl text-left border-2 border-transparent hover:border-blue-500 transition-colors">
+                <div class="flex items-center">
+                    <span class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mr-3">D</span>
+                    <span>Boolean</span>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- 底部按钮 -->
+    <div class="fixed bottom-0 left-0 right-0 p-4 bg-white border-t">
+        <button class="w-full bg-blue-500 text-white py-3 rounded-lg font-medium">
+            下一题
+        </button>
+    </div>
+
+    <script>
+        // 计时器功能
+        function startTimer(duration) {
+            let timer = duration;
+            const display = document.getElementById('time-display');
+            const timerElement = document.getElementById('timer');
+            
+            const countdown = setInterval(() => {
+                const minutes = Math.floor(timer / 60);
+                const seconds = timer % 60;
+
+                // 格式化显示
+                display.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                // 时间到
+                if (--timer < 0) {
+                    clearInterval(countdown);
+                    display.textContent = "00:00";
+                    // TODO: 处理答题时间结束的逻辑
+                    return;
+                }
+
+                // 剩余5分钟时显示警告
+                if (timer === 300) {
+                    timerElement.classList.add('warning');
+                }
+            }, 1000);
+        }
+
+        // 启动30分钟计时器
+        window.onload = () => {
+            startTimer(30 * 60); // 30分钟
+        };
+    </script>
+</body>
+</html> 

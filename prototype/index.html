@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>答题系统原型</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .prototype-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 390px);
+            gap: 2rem;
+            padding: 2rem;
+        }
+        .phone-frame {
+            width: 390px;
+            height: 844px;
+            background: white;
+            border-radius: 45px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .iframe-container {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="prototype-container">
+        <div class="phone-frame">
+            <iframe src="login.html" class="iframe-container" frameborder="0"></iframe>
+        </div>
+        <div class="phone-frame">
+            <iframe src="home.html" class="iframe-container" frameborder="0"></iframe>
+        </div>
+        <div class="phone-frame">
+            <iframe src="quiz.html" class="iframe-container" frameborder="0"></iframe>
+        </div>
+        <div class="phone-frame">
+            <iframe src="profile.html" class="iframe-container" frameborder="0"></iframe>
+        </div>
+        <div class="phone-frame">
+            <iframe src="leaderboard.html" class="iframe-container" frameborder="0"></iframe>
+        </div>
+        <div class="phone-frame">
+            <iframe src="settings.html" class="iframe-container" frameborder="0"></iframe>
+        </div>
+        <div class="phone-frame">
+            <iframe src="history.html" class="iframe-container" frameborder="0"></iframe>
+        </div>
+        <div class="phone-frame">
+            <iframe src="mistakes.html" class="iframe-container" frameborder="0"></iframe>
+        </div>
+
+    </div>
+</body>
+</html> 

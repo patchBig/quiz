@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 答题系统</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .ios-status-bar {
+            height: 44px;
+            background-color: #000;
+            color: white;
+            padding: 12px 16px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- iOS 状态栏 -->
+    <div class="ios-status-bar flex justify-between items-center">
+        <div>9:41</div>
+        <div class="flex space-x-2">
+            <i class="fas fa-signal"></i>
+            <i class="fas fa-wifi"></i>
+            <i class="fas fa-battery-full"></i>
+        </div>
+    </div>
+
+    <!-- 登录表单 -->
+    <div class="p-8">
+        <div class="text-center mb-12">
+            <img src="https://your-logo-url.com/logo.png" alt="Logo" class="w-24 h-24 mx-auto mb-4">
+            <h1 class="text-2xl font-bold">答题系统</h1>
+        </div>
+
+        <form class="space-y-6">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">手机号</label>
+                <input type="tel" class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300" placeholder="请输入手机号">
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium text-gray-700">密码</label>
+                <input type="password" class="mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300" placeholder="请输入密码">
+            </div>
+
+            <button type="submit" class="w-full bg-blue-500 text-white py-3 rounded-lg font-medium">
+                登录
+            </button>
+
+            <div class="flex justify-between text-sm text-gray-600">
+                <a href="#" class="hover:text-blue-500">注册账号</a>
+                <a href="#" class="hover:text-blue-500">忘记密码？</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html> 
